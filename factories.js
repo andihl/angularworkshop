@@ -1,6 +1,6 @@
 angular.module("factories", [])
 
-    .factory("starFactory", function () {
+    .factory("starFactory", function ($http) {
         var starFactory = {};
 
         starFactory.getStars = function() {
@@ -15,7 +15,7 @@ angular.module("factories", [])
                     name: "star from Factory 3"
                 }
             ];
-        }
+        };
 
         return starFactory;
     })
