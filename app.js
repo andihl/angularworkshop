@@ -1,4 +1,5 @@
 angular.module("angularworkshop", [
-    'controller'
+    'controller',
+    'factories'
 ])
 ;
