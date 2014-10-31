@@ -19,7 +19,14 @@
         </li>
     </ul>
 
-    New Star: <input type="text" ng-model="starName">&nbsp;<button ng-click="addStar(starName)">add star</button>
+    <form name="starForm">
+        New Star: <input type="text" ng-model="starName" required ng-minlength="5">
+
+        <br/>
+        <br/>
+
+        <button ng-click="addStar(starName)" ng-disabled="starForm.$invalid">add star</button>
+    </form>
 </div>
 
 </body>
