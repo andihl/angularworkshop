@@ -1,0 +1,13 @@
+*.sw*
+*~
+node_modules/
+vendor/bower
+target/
+.sass-cache/
+.idea
+.bower-tmp
+_SpecRunner.html
+.DS_Store
+celepedia-frontend.iml
+atlassian-ide-plugin.xml
+*.iml
