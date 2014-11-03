@@ -1,14 +1,20 @@
 angular.module("controller", [])
 
     .controller("starListCtrl", function ($scope, starFactory) {
-        $scope.stars = starFactory.getStars();
+        starFactory.getStars().then(function(stars) {
+            $scope.stars = stars;
+        });
 
         $scope.addStar = function(starName) {
             var newStar = {
                 name: starName
             };
 
-            $scope.stars.push(newStar);
+            starFactory.addStar(newStar).then(function(response) {
+                $scope.stars.push(response);
+            });
+
+
         }
     })
 ;

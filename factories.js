@@ -2,19 +2,22 @@ angular.module("factories", [])
 
     .factory("starFactory", function ($http) {
         var starFactory = {};
+        var url = 'http://c-f-master-staging-preview.herokuapp.com/celepedia/rest/pcp';
 
         starFactory.getStars = function() {
-            return [
-                {
-                    name: "star from Factory 1"
-                },
-                {
-                    name: "star from Factory 2"
-                },
-                {
-                    name: "star from Factory 3"
-                }
-            ];
+            return $http({method: 'GET', url: url}).then(function(response) {
+                return response.data;
+            });
+        };
+
+        starFactory.addStar = function(star) {
+            var data = {
+                data: star
+            };
+
+            return $http({method: 'POST', url: url, data: data}).then(function(response) {
+                return response.data;
+            });
         };
 
         return starFactory;
