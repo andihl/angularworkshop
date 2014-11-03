@@ -9,12 +9,15 @@
     <script src="app.js"></script>
     <script src="controller.js"></script>
     <script src="factories.js"></script>
+    <script src="filters.js"></script>
 </head>
 <body>
 
 <div ng-controller="starListCtrl">
+    Suche: <input type="text" ng-model="query">
+
     <ul>
-        <li ng-repeat="star in stars">
+        <li ng-repeat="star in stars |  starNameFilter:query">
             {{star.data.name}}
         </li>
     </ul>
