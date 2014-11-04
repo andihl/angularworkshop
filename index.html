@@ -16,10 +16,20 @@
     <ul>
         <li ng-repeat="star in stars">
             {{star.name}}
+            {{star.gender}}
         </li>
     </ul>
 
-    New Star: <input type="text" ng-model="starName">&nbsp;<button ng-click="addStar(starName)">add star</button>
+    New Star:
+    <input type="text" ng-model="star.name">
+
+    <input type="radio" id="radioMale" ng-model="star.gender" value="m">
+    <label for="radioMale">männlich</label>
+    <input type="radio" id="radioFemale" ng-model="star.gender" value="f">
+    <label for="radioFemale">weiblich</label>
+
+    <br>
+    <button ng-click="addStar(star)">add star</button>
 </div>
 
 </body>
