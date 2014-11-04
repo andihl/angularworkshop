@@ -1,6 +1,7 @@
 angular.module("angularworkshop", [
     'controller',
     'factories',
-    'filters'
+    'filters',
+    'directives'
 ])
 ;

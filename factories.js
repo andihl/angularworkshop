@@ -20,6 +20,12 @@ angular.module("factories", [])
             });
         };
 
+        starFactory.deleteStar = function(starId) {
+            return $http({method: 'DELETE', url: url + '/' + starId}).then(function(response) {
+                return response.data;
+            });
+        };
+
         return starFactory;
     })
 ;
