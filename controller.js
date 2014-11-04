@@ -5,9 +5,10 @@ angular.module("controller", [])
             $scope.stars = stars;
         });
 
-        $scope.addStar = function(starName) {
+        $scope.addStar = function(star) {
             var newStar = {
-                name: starName
+                name: star.name,
+                gender: star.gender
             };
 
             starFactory.addStar(newStar).then(function(response) {
