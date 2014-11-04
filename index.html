@@ -19,16 +19,21 @@
     <ul>
         <li ng-repeat="star in stars |  starNameFilter:query">
             {{star.data.name}}
+            {{star.data.gender}}
         </li>
     </ul>
 
     <form name="starForm">
-        New Star: <input type="text" ng-model="starName" required ng-minlength="5">
+        New Star:
+        <input type="text" ng-model="star.name" required ng-minlength="5">
 
-        <br/>
-        <br/>
+        <input type="radio" id="radioMale" ng-model="star.gender" value="m" required>
+        <label for="radioMale">männlich</label>
+        <input type="radio" id="radioFemale" ng-model="star.gender" value="f" required>
+        <label for="radioFemale">weiblich</label>
 
-        <button ng-click="addStar(starName)" ng-disabled="starForm.$invalid">add star</button>
+        <br>
+        <button ng-click="addStar(star)" ng-disabled="starForm.$invalid">add star</button>
     </form>
 </div>
 
